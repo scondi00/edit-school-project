@@ -1,0 +1,37 @@
+.predavaci-div {
+  display: flex;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.predavac {
+  border: 1px solid black;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.predavaci-filter-div {
+  border: 1px solid black;
+  padding: 20px;
+  margin-right: 100px;
+}
+
+.profil-predavaca {
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  margin-right: 50px;
+}
+.radionice-profila {
+  padding: 50px;
+  background-color: violet;
+}
+.profil-div {
+  display: flex;
+}
+.radionica-profil {
+  background-color: rgb(201, 201, 201);
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
+}

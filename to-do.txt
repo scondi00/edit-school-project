@@ -1,0 +1,31 @@
+- pokusaj napravit da radionica ima vise jezika i filter sa tim
+-vidi sta je s loading state-om
+- kako hendlat kad se isti korisnik prijavi na vise radionica
+- napravit maximalni broj prijava --> ako je previse, dodaj alert
+-vidit kako hendlat u Prijava, nakon sta smo updejtali broj prijava --> mozda stavit opet sve filtere na [] ?
+-input fieldove u radionicama bolje raspisat
+
+
+---------------------------RADIONICE----------------------------------------
+
+--> pokusaj vidit za sve radionice filove kako vratit state, a ne koristit window.location.reload()
+--> dodaj filtere tezina i tema u radionice.jsx
+
+//FILTER RADIONICE JSX
+-dodat vise filtera tema
+
+//DODAJ_NOVU_RADIONICU.JSX
+- dodaj input za stavit sliku
+-dodaj krajni datum
+
+UREDI RADIONICU
+-dodaj delete button
+-mozda napravit da je select tezine i teme jedna komponenta
+-stavi alert jesi siguran da zelis promjeniti
+
+
+------------------------------PREDAVACI------------------------------------
+--> dodaj opciju za dodjelit ID
+
+-----------------------ProfilPredavaca----------------------------------
+-->dodaj slike

@@ -1,0 +1,172 @@
+{
+  "radionice": [
+    {
+      "id": "radionica_1",
+      "ime": "Radionica 1",
+      "datum": "2024-04-13",
+      "predavac": "Ivo Ivić",
+      "opis": "Neka radionica",
+      "broj_prijava": 7,
+      "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
+      "teme": ["WordPress"],
+      "tezina": "Senior"
+    },
+    {
+      "id": "radionica_2",
+      "ime": "Radionica 2",
+      "datum": "01.02.2025",
+      "predavac": "Ante",
+      "opis": "Kratki opis radionice 2",
+      "broj_prijava": 6,
+      "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
+      "teme": ["PHP", "WordPress"],
+      "tezina": "Junior"
+    },
+    {
+      "id": "radionica_3",
+      "ime": "Radionica 3",
+      "datum": "01.03.2025",
+      "predavac": "predavac_3",
+      "opis": "Kratki opis radionice 3",
+      "broj_prijava": 1,
+      "img": "",
+      "teme": ["C++"],
+      "tezina": "Senior"
+    },
+    {
+      "id": "8917",
+      "ime": "Sarini tutoriali",
+      "datum": "2024-05-25",
+      "predavac": "Sara",
+      "opis": "Lore ipsum",
+      "broj_prijava": 0,
+      "img": "",
+      "teme": ["PHP"],
+      "tezina": "Mid"
+    }
+  ],
+  "predavaci": [
+    {
+      "id": "predavac_1",
+      "ime": "Predavac 1",
+      "biografija": "Lore ipsum",
+      "organizacija": "Organizacija 1",
+      "teme": ["React", "Express"]
+    },
+    {
+      "id": "predavac_2",
+      "ime": "Ante",
+      "biografija": "Lore ipsum",
+      "organizacija": "Organizacija 2",
+      "teme": ["React", "C++"]
+    },
+    {
+      "id": "predavac_3",
+      "ime": "Predavac 3",
+      "biografija": "Biografija predavaca 3",
+      "organizacija": "Organizacija 3",
+      "teme": ["PHP"]
+    },
+    {
+      "id": "93df",
+      "ime": "Sara",
+      "biografija": "Lore ipsum",
+      "organizacija": "Organizacija 1",
+      "img": "",
+      "teme": ["React", "Express"],
+      "radionice": []
+    }
+  ],
+  "organizacije": [
+    {
+      "id": "organizacija_1",
+      "ime": "Organizacija 1",
+      "opis": "Opis organizacije 1",
+      "radionice": ["radionica_1"]
+    },
+    {
+      "id": "organizacija_2",
+      "ime": "Organizacija 2",
+      "opis": "Opis organizacije 2",
+      "radionice": ["radionica_2"]
+    },
+    {
+      "id": "organizacija_3",
+      "ime": "Organizacija 3",
+      "opis": "Opis organizacije 3",
+      "radionice": ["radionica_3"]
+    }
+  ],
+  "tezine": [
+    {
+      "id": "junior",
+      "ime": "Junior"
+    },
+    {
+      "id": "mid",
+      "ime": "Mid"
+    },
+    {
+      "id": "senior",
+      "ime": "Senior"
+    }
+  ],
+  "teme": [
+    {
+      "id": "react",
+      "ime": "React"
+    },
+    {
+      "id": "express",
+      "ime": "Express"
+    },
+    {
+      "id": "next_js",
+      "ime": "Next.js"
+    },
+    {
+      "id": "php",
+      "ime": "PHP"
+    },
+    {
+      "id": "wordpress",
+      "ime": "WordPress"
+    },
+    {
+      "id": "c++",
+      "ime": "C++"
+    }
+  ],
+  "prijave": [
+    {
+      "ime": "mate",
+      "email": "mate@email.com",
+      "razlog_prijave": "lore ipsum",
+      "id": "bfd9"
+    },
+    {
+      "id": "f176",
+      "puno_ime": "sara",
+      "email": "sasv@sas.com",
+      "broj_mobitela": "04654",
+      "razlog_prijave": "dadassd",
+      "radionica": "Radionica 1"
+    },
+    {
+      "id": "2670",
+      "puno_ime": "aaa",
+      "email": "asaas@aassa.com",
+      "broj_mobitela": "qqq",
+      "razlog_prijave": "saad",
+      "radionica": "Radionica 3"
+    },
+    {
+      "id": "e630",
+      "puno_ime": "Mate",
+      "email": "mate@gmail.com",
+      "broj_mobitela": "04654",
+      "razlog_prijave": "Lore ipsum",
+      "radionica": "Radionica 1"
+    }
+  ]
+}

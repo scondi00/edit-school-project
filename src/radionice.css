@@ -1,0 +1,42 @@
+.radionice-filter {
+  border: 1px solid blue;
+  width: 250px;
+  margin-right: 50px;
+}
+
+.radionice {
+  border: 1px solid blue;
+}
+
+.radionica {
+  background-color: aqua;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.slika-radionice {
+  margin-top: 20px;
+  width: 100px;
+}
+
+/* MODAL */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+}
