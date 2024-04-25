@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function DodajNovuRadionicu({
-  setDodajRadionicu,
+  setModalDodajRadionicu,
   setRadionice,
 }) {
   const [novaRadionica, setNovaRadionica] = useState({
+    id: "",
     ime: "",
     datum: "",
     predavac: "",
@@ -32,6 +33,7 @@ export default function DodajNovuRadionicu({
 
   function obradiPodatke(objekt) {
     return {
+      id: objekt.id,
       ime: objekt.ime,
       datum: objekt.datum,
       predavac: objekt.predavac,
@@ -49,13 +51,13 @@ export default function DodajNovuRadionicu({
 
     axios
       .post("http://localhost:3001/radionice", podaciZaSlanje)
-      .then((r) => window.location.reload())
-      // .then((r) => {
-      //   axios.get("http://localhost:3001/radionice").then((r) => {
-      //     setRadionice(r.data);
-      //     setDodajRadionicu(false);
-      //   });
-      // })
+      //.then((r) => window.location.reload())
+      .then((r) => {
+        axios.get("http://localhost:3001/radionice").then((r) => {
+          setRadionice(r.data);
+          setModalDodajRadionicu(false);
+        });
+      })
       .catch((err) => alert(err));
   };
 
@@ -80,10 +82,18 @@ export default function DodajNovuRadionicu({
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setDodajRadionicu(false)}>X</button>
+        <button onClick={() => setModalDodajRadionicu(false)}>X</button>
         <h1>Dodaj novu radionicu</h1>
         <div>
           <form onSubmit={dodajRadionicu}>
+            <input
+              type="text"
+              name="id"
+              placeholder="id"
+              required
+              value={novaRadionica.id}
+              onChange={changeInput}
+            />
             <input
               type="text"
               name="ime"

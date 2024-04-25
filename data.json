@@ -8,7 +8,9 @@
       "opis": "Neka radionica",
       "broj_prijava": 7,
       "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
-      "teme": ["WordPress"],
+      "teme": [
+        "WordPress"
+      ],
       "tezina": "Senior"
     },
     {
@@ -19,7 +21,10 @@
       "opis": "Kratki opis radionice 2",
       "broj_prijava": 6,
       "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
-      "teme": ["PHP", "WordPress"],
+      "teme": [
+        "PHP",
+        "WordPress"
+      ],
       "tezina": "Junior"
     },
     {
@@ -30,7 +35,9 @@
       "opis": "Kratki opis radionice 3",
       "broj_prijava": 1,
       "img": "",
-      "teme": ["C++"],
+      "teme": [
+        "C++"
+      ],
       "tezina": "Senior"
     },
     {
@@ -41,7 +48,65 @@
       "opis": "Lore ipsum",
       "broj_prijava": 0,
       "img": "",
-      "teme": ["PHP"],
+      "teme": [
+        "PHP"
+      ],
+      "tezina": "Mid"
+    },
+    {
+      "id": "dd62",
+      "ime": "Luka uci React",
+      "datum": "2024-05-04",
+      "predavac": "Luka Lukić",
+      "opis": "Ucenje Reacta",
+      "broj_prijava": 0,
+      "img": "",
+      "teme": [
+        "React",
+        "Express"
+      ],
+      "tezina": "Mid"
+    },
+    {
+      "id": "8e99",
+      "ime": "Radionica 4",
+      "datum": "2024-04-04",
+      "predavac": "Predavac 3",
+      "opis": "Lore ipsum 4",
+      "broj_prijava": 0,
+      "img": "",
+      "teme": [
+        "React",
+        "Express",
+        "Next.js"
+      ],
+      "tezina": "Senior"
+    },
+    {
+      "id": "radionica_9",
+      "ime": "Radionica 9",
+      "datum": "2024-04-11",
+      "predavac": "Dragan",
+      "opis": "Nesto o radionici",
+      "broj_prijava": 0,
+      "img": "",
+      "teme": [
+        "React"
+      ],
+      "tezina": "Junior"
+    },
+    {
+      "id": "radionica_10",
+      "ime": "Radionica 10",
+      "datum": "2024-04-06",
+      "predavac": "Dragan",
+      "opis": "Dragans workshop",
+      "broj_prijava": 0,
+      "img": "",
+      "teme": [
+        "Express",
+        "Next.js"
+      ],
       "tezina": "Mid"
     }
   ],
@@ -51,21 +116,29 @@
       "ime": "Predavac 1",
       "biografija": "Lore ipsum",
       "organizacija": "Organizacija 1",
-      "teme": ["React", "Express"]
+      "teme": [
+        "React",
+        "Express"
+      ]
     },
     {
       "id": "predavac_2",
       "ime": "Ante",
       "biografija": "Lore ipsum",
       "organizacija": "Organizacija 2",
-      "teme": ["React", "C++"]
+      "teme": [
+        "React",
+        "C++"
+      ]
     },
     {
       "id": "predavac_3",
       "ime": "Predavac 3",
       "biografija": "Biografija predavaca 3",
       "organizacija": "Organizacija 3",
-      "teme": ["PHP"]
+      "teme": [
+        "PHP"
+      ]
     },
     {
       "id": "93df",
@@ -73,8 +146,30 @@
       "biografija": "Lore ipsum",
       "organizacija": "Organizacija 1",
       "img": "",
-      "teme": ["React", "Express"],
-      "radionice": []
+      "teme": [
+        "React",
+        "Express"
+      ]
+    },
+    {
+      "id": "98cd",
+      "ime": "Anamarija ",
+      "biografija": "Lore ipsum",
+      "organizacija": "Organizacija 3",
+      "img": "",
+      "teme": [
+        "PHP"
+      ]
+    },
+    {
+      "id": "fbab",
+      "ime": "Dragan",
+      "biografija": "Draganova biografija",
+      "organizacija": "Organizacija 5",
+      "img": "",
+      "teme": [
+        "Next.js"
+      ]
     }
   ],
   "organizacije": [
@@ -82,19 +177,49 @@
       "id": "organizacija_1",
       "ime": "Organizacija 1",
       "opis": "Opis organizacije 1",
-      "radionice": ["radionica_1"]
+      "radionice": [
+        "radionica_1"
+      ]
     },
     {
       "id": "organizacija_2",
       "ime": "Organizacija 2",
       "opis": "Opis organizacije 2",
-      "radionice": ["radionica_2"]
+      "radionice": [
+        "radionica_2"
+      ]
     },
     {
       "id": "organizacija_3",
       "ime": "Organizacija 3",
       "opis": "Opis organizacije 3",
-      "radionice": ["radionica_3"]
+      "radionice": [
+        "radionica_3"
+      ]
+    },
+    {
+      "id": "organizacija_4",
+      "ime": "Organizacija 4",
+      "opis": "Lore ipsum 4",
+      "radionice": [
+        "Radionica 1",
+        "Radionica 3"
+      ]
+    },
+    {
+      "id": "organizacija_5",
+      "ime": "Organizacija 5",
+      "opis": "Lore ipsum 5",
+      "radionice": []
+    },
+    {
+      "id": "organizacija_6",
+      "ime": "Organizacija 6",
+      "opis": "Lore ipsum 6",
+      "radionice": [
+        "Radionica 3",
+        "Sarini tutoriali"
+      ]
     }
   ],
   "tezine": [

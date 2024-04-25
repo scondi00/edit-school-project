@@ -29,3 +29,8 @@ UREDI RADIONICU
 
 -----------------------ProfilPredavaca----------------------------------
 -->dodaj slike
+
+___________________DODAJ Radionicu________________
+--> ako zelite dodat neku radionicu - prvo dodaj broj radionica, +imena
+
+DODAVANJE --> kad dodamo radionicu da se odma ucrta kod predavaca

@@ -10,6 +10,9 @@ import Navbar from "./components/Navbar";
 import Error from "./pages/Error";
 import Administracija from "./pages/Administracija";
 import PredavacProfil from "./components/PredavacProfil";
+import AdminRadionice from "./pages/AdminRadionice";
+import AdminPredavaci from "./pages/AdminPredavaci";
+import AdminOrganizacije from "./pages/AdminOrganizacije";
 
 export const AdminContext = createContext();
 
@@ -24,7 +27,20 @@ function App() {
 
           <Route path="/radionice" element={<Radionice />} />
           <Route path="/predavaci" element={<Predavači />} />
-          <Route path="/administracija" element={<Administracija />} />
+          <Route path="/administracija" element={<Administracija />}>
+            <Route
+              path="/administracija/radionice"
+              element={<AdminRadionice />}
+            />
+            <Route
+              path="/administracija/predavaci"
+              element={<AdminPredavaci />}
+            />
+            <Route
+              path="/administracija/organizacije"
+              element={<AdminOrganizacije />}
+            />
+          </Route>
           <Route path="/predavaci/:id" element={<PredavacProfil />} />
         </Route>
         <Route path="*" element={<Error />} />

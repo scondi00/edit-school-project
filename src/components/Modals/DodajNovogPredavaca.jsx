@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-export default function DodajNovogPredavaca({ setModalNoviPredavac }) {
+export default function DodajNovogPredavaca({
+  setModalDodajPredavaca,
+  setPredavaci,
+}) {
   const [teme, setTeme] = useState([]);
   const [organizacije, setOrganizacije] = useState([]);
   const [noviPredavac, setNoviPredavac] = useState({
+    id: "",
     ime: "",
     biografija: "",
     organizacija: "",
@@ -43,6 +47,7 @@ export default function DodajNovogPredavaca({ setModalNoviPredavac }) {
 
   function obradiPodatke(objekt) {
     return {
+      id: objekt.id,
       ime: objekt.ime,
       biografija: objekt.biografija,
       organizacija: objekt.organizacija,
@@ -58,16 +63,30 @@ export default function DodajNovogPredavaca({ setModalNoviPredavac }) {
 
     axios
       .post("http://localhost:3001/predavaci", podaciZaSlanje)
-      .then((r) => window.location.reload())
+      //.then((r) => window.location.reload())
+      .then((r) => {
+        axios.get("http://localhost:3001/predavaci").then((r) => {
+          setPredavaci(r.data);
+          setModalDodajPredavaca(false);
+        });
+      })
       .catch((err) => alert(err));
   };
 
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalNoviPredavac(false)}>X</button>
+        <button onClick={() => setModalDodajPredavaca(false)}>X</button>
         <h1>Dodaj Novog Predavaca</h1>
         <form onSubmit={dodajPredavaca}>
+          <input
+            type="text"
+            name="id"
+            placeholder="id"
+            required
+            value={noviPredavac.id}
+            onChange={changeInput}
+          />
           <input
             type="text"
             name="ime"
