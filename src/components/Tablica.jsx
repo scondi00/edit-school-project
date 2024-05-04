@@ -1,6 +1,6 @@
 import RedakTablice from "./RedakTablice";
 
-export default function Tablica({ result, stupci }) {
+export default function Tablica({ result, stupci, ime, set }) {
   return (
     <div>
       <table>
@@ -15,7 +15,13 @@ export default function Tablica({ result, stupci }) {
         </thead>
         <tbody>
           {result.map((item) => (
-            <RedakTablice key={item.id} item={item} stupci={stupci} />
+            <RedakTablice
+              key={item.id}
+              item={item}
+              stupci={stupci}
+              ime={ime}
+              set={set}
+            />
           ))}
         </tbody>
       </table>

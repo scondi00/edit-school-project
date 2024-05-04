@@ -19,13 +19,11 @@
 -dodaj krajni datum
 
 UREDI RADIONICU
--dodaj delete button
--mozda napravit da je select tezine i teme jedna komponenta
+
 -stavi alert jesi siguran da zelis promjeniti
 
 
-------------------------------PREDAVACI------------------------------------
---> dodaj opciju za dodjelit ID
+
 
 -----------------------ProfilPredavaca----------------------------------
 -->dodaj slike

@@ -19,8 +19,7 @@ export const AdminContext = createContext();
 function App() {
   const [isAdmin, setAdmin] = useState(false);
   return (
-    <AdminContext.Provider value={isAdmin}>
-      <button onClick={() => setAdmin(!isAdmin)}>Toggle for User Admin</button>
+    <AdminContext.Provider value={{ isAdmin, setAdmin }}>
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route exact path="/" element={<HomePage />} />

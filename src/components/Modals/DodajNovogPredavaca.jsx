@@ -76,60 +76,75 @@ export default function DodajNovogPredavaca({
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalDodajPredavaca(false)}>X</button>
-        <h1>Dodaj Novog Predavaca</h1>
-        <form onSubmit={dodajPredavaca}>
-          <input
-            type="text"
-            name="id"
-            placeholder="id"
-            required
-            value={noviPredavac.id}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="ime"
-            placeholder="ime"
-            required
-            value={noviPredavac.ime}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="biografija"
-            placeholder="biografija"
-            required
-            value={noviPredavac.biografija}
-            onChange={changeInput}
-          />
-          Odaberi organizaciju
-          <select
-            name="organizacija"
-            value={noviPredavac.organizacija}
-            onChange={changeInput}
-          >
-            <option value={""}>---</option>
-            {organizacije.map((r) => (
-              <option key={r.id}>{r.ime}</option>
+        <button
+          className="exit-modal"
+          onClick={() => setModalDodajPredavaca(false)}
+        >
+          X
+        </button>
+        <h1>Dodaj novog predavača</h1>
+        <div className="modal-body">
+          <form onSubmit={dodajPredavaca}>
+            <input
+              type="text"
+              name="id"
+              placeholder="Id predavača..."
+              required
+              value={noviPredavac.id}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="ime"
+              placeholder="Ime predavača..."
+              required
+              value={noviPredavac.ime}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="biografija"
+              placeholder="Biografija predavača..."
+              required
+              value={noviPredavac.biografija}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="img"
+              placeholder="Link na sliku predavača"
+              required
+              value={noviPredavac.img}
+              onChange={changeInput}
+            />
+            Odaberi organizaciju
+            <select
+              name="organizacija"
+              value={noviPredavac.organizacija}
+              onChange={changeInput}
+            >
+              <option value={""}>---</option>
+              {organizacije.map((r) => (
+                <option key={r.id}>{r.ime}</option>
+              ))}
+            </select>
+            <br />
+            Odaberi temu:
+            {teme.map((r) => (
+              <div key={r.id} className="odaberi-temu">
+                <input
+                  type="checkbox"
+                  id={r.id}
+                  name="teme"
+                  value={r.ime}
+                  onChange={handleOdabraneTeme}
+                />
+                <label>{r.ime}</label>
+              </div>
             ))}
-          </select>
-          <br />
-          Odaberi temu:
-          {teme.map((r) => (
-            <div key={r.id}>
-              <label>{r.ime}</label>
-              <input
-                type="checkbox"
-                id={r.id}
-                name="teme"
-                value={r.ime}
-                onChange={handleOdabraneTeme}
-              />
-            </div>
-          ))}
-          <input type="submit" value="Dodaj predavača" />
-        </form>
+            <input type="submit" value="Dodaj predavača" />
+          </form>
+        </div>
       </div>
     </div>
   );

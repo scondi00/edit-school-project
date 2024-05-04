@@ -6,11 +6,13 @@ export default function UrediPredavača({
   currentPredavac,
   teme,
   organizacije,
+  setPredavaci,
 }) {
   const [editPredavaca, setEditPredavaca] = useState({
     ime: "",
     biografija: "",
     organizacija: "",
+    img: "",
     teme: [],
   });
 
@@ -26,6 +28,9 @@ export default function UrediPredavača({
     }
     if (editPredavaca.organizacija !== "") {
       data.organizacija = editPredavaca.organizacija;
+    }
+    if (editPredavaca.img !== "") {
+      data.img = editPredavaca.img;
     }
     if (editPredavaca.teme.length) {
       data.teme = editPredavaca.teme;
@@ -63,64 +68,80 @@ export default function UrediPredavača({
           `http://localhost:3001/predavaci/${currentPredavac.id}`,
           promjeniPodatke
         )
-        .then((r) => window.location.reload())
+        .then((r) => {
+          //  window.location.reload()
+          axios.get("http://localhost:3001/predavaci").then((r) => {
+            setPredavaci(r.data);
+            setModalUrediPredavac(false);
+          });
+        })
         .catch((err) => alert(err));
     }
   }
-  console.log(editPredavaca);
   return (
     <div className="modal-background">
       <div className="modal-container">
         <button
+          className="exit-modal"
           onClick={() => {
             setModalUrediPredavac(false);
           }}
         >
           X
         </button>
+
         <h2>Uredi predavača: {currentPredavac.ime}</h2>
-        <form onSubmit={urediPredavaca}>
-          <input
-            type="text"
-            name="ime"
-            placeholder="ime"
-            value={editPredavaca.ime}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="biografija"
-            placeholder="biografija"
-            value={editPredavaca.biografija}
-            onChange={changeInput}
-          />
-          Odaberi organizaciju
-          <select
-            name="organizacija"
-            value={editPredavaca.organizacija}
-            onChange={changeInput}
-          >
-            <option value={""}>---</option>
-            {organizacije.map((r) => (
-              <option key={r.id}>{r.ime}</option>
+        <div className="modal-body">
+          <form onSubmit={urediPredavaca}>
+            <input
+              type="text"
+              name="ime"
+              placeholder="ime"
+              value={editPredavaca.ime}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="biografija"
+              placeholder="biografija"
+              value={editPredavaca.biografija}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="img"
+              placeholder="Link na sliku predavaca"
+              value={editPredavaca.img}
+              onChange={changeInput}
+            />
+            Odaberi organizaciju
+            <select
+              name="organizacija"
+              value={editPredavaca.organizacija}
+              onChange={changeInput}
+            >
+              <option value={""}>---</option>
+              {organizacije.map((r) => (
+                <option key={r.id}>{r.ime}</option>
+              ))}
+            </select>
+            <br />
+            Odaberi temu:
+            {teme.map((r) => (
+              <div key={r.id} className="odaberi-temu">
+                <input
+                  type="checkbox"
+                  id={r.id}
+                  name="teme"
+                  value={r.ime}
+                  onChange={handleOdabraneTeme}
+                />
+                <label>{r.ime}</label>
+              </div>
             ))}
-          </select>
-          <br />
-          Odaberi temu:
-          {teme.map((r) => (
-            <div key={r.id}>
-              <label>{r.ime}</label>
-              <input
-                type="checkbox"
-                id={r.id}
-                name="teme"
-                value={r.ime}
-                onChange={handleOdabraneTeme}
-              />
-            </div>
-          ))}
-          <input type="submit" value="Spremi promjene" />
-        </form>
+            <input type="submit" value="Spremi promjene" />
+          </form>
+        </div>
       </div>
     </div>
   );

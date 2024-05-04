@@ -1,0 +1,297 @@
+.main-navbar {
+  background-color: rgb(40, 175, 176);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  padding: 20px;
+  color: aliceblue;
+  font-size: 25px;
+}
+
+.link-div {
+  margin-left: 15px;
+}
+
+img {
+  width: 150px;
+}
+
+.toggle-button {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  margin-right: 50px;
+  border: none;
+  background-color: #b2b2b2;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px rgba(64, 64, 64, 0.652);
+}
+
+.toggle-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgb(238, 150, 75);
+  transition: width 0.3s ease;
+}
+
+.toggle-button.on::before {
+  width: 100%;
+}
+
+.toggle-button.off::before {
+  width: 0;
+}
+
+.toggle-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.toggle-button.on .toggle-label {
+  opacity: 1;
+}
+
+.toggle-button.off .toggle-label {
+  opacity: 1;
+}
+
+/* MODAL -----------------------------------------------------------------------*/
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.modal-body {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.modal-body form input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-body form input[type="submit"] {
+  background-color: rgb(238, 150, 75);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal-body form input[type="submit"]:hover {
+  background-color: rgb(212, 105, 5);
+}
+.modal-body form input[name="razlog_prijave"] {
+  width: 100%; /* Make the input take up full width */
+  height: 100px; /* Set the height of the input */
+}
+.odaberi-tezinu,
+.odaberi-temu {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: auto 1fr; /* Set the first column to auto size for input and the second column to take up the remaining space for label */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Add margin below the label container */
+}
+
+/* Style the input */
+.odaberi-tezinu input[type="radio"],
+.odaberi-temu input[type="checkbox"] {
+  margin: 0; /* Add some space between the input and the label */
+}
+
+/* Style the label */
+.odaberi-tezinu label,
+.odaberi-temu label {
+  font-weight: bold; /* Make the label text bold */
+  padding-left: 10px;
+}
+/* Style the select element */
+select[name="tezina"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Style the options */
+select[name="tezina"] option {
+  font-size: 16px;
+}
+select[name="organizacija"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Style the options */
+select[name="organizacija"] option {
+  font-size: 16px;
+}
+
+.exit-modal {
+  width: 30px;
+  height: 30px;
+  border: none;
+  color: white;
+  border-radius: 99px;
+  background-color: rgb(40, 175, 176);
+}
+
+/* --------------------------------------------------------------------- */
+
+.uredi-btn {
+  width: 150px;
+  margin-left: 15px;
+  color: white;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(238, 150, 75);
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+.uredi-btn:hover {
+  background-color: rgb(212, 105, 5);
+}
+
+.add-workshop-btn {
+  box-shadow: 1px 1px 10px rgba(64, 64, 64, 0.652);
+  margin-top: 25px;
+  margin-right: 50px;
+  color: white;
+  position: relative;
+  width: 250px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(238, 150, 75);
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.add-workshop-btn:hover {
+  background-color: rgb(212, 105, 5);
+}
+
+.filter-i-radionice {
+  display: flex;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+
+/* Style for the checkbox container */
+.checkbox-container {
+  margin-bottom: 10px;
+  display: flex; /* Use flexbox to align items */
+  align-items: center;
+}
+
+/* Style for the checkbox */
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Set custom size */
+  width: 20px;
+  height: 20px;
+  /* Add custom styles */
+  border: 2px solid rgb(25, 100, 126); /* Border color */
+  background-color: white; /* Background color */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer;
+  position: relative;
+  margin-right: 5px; /* Add some space between checkbox and label */
+}
+
+/* Style for the label */
+.checkbox-container label {
+  font-size: 20px;
+}
+
+/* Change appearance of checkbox when checked */
+.checkbox-container input[type="checkbox"]:checked {
+  background-color: rgb(25, 100, 126);
+}
+
+/* Style for the custom checkmark */
+.checkbox-container input[type="checkbox"]::before {
+  content: "✔";
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+/* Show checkmark when checkbox is checked */
+.checkbox-container input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+.title {
+  font-size: 65px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.filter {
+  box-shadow: 1px 1px 10px rgba(64, 64, 64, 0.652);
+  border-radius: 30px;
+  padding: 25px;
+  width: 400px;
+  margin-right: 50px;
+}

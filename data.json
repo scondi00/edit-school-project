@@ -1,184 +1,78 @@
 {
   "radionice": [
     {
-      "id": "radionica_1",
-      "ime": "Radionica 1",
-      "datum": "2024-04-13",
-      "predavac": "Ivo Ivić",
-      "opis": "Neka radionica",
-      "broj_prijava": 7,
-      "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
-      "teme": [
-        "WordPress"
-      ],
-      "tezina": "Senior"
-    },
-    {
-      "id": "radionica_2",
-      "ime": "Radionica 2",
-      "datum": "01.02.2025",
-      "predavac": "Ante",
-      "opis": "Kratki opis radionice 2",
-      "broj_prijava": 6,
-      "img": "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104813/1268-768x591.png",
-      "teme": [
-        "PHP",
-        "WordPress"
-      ],
-      "tezina": "Junior"
-    },
-    {
-      "id": "radionica_3",
-      "ime": "Radionica 3",
-      "datum": "01.03.2025",
-      "predavac": "predavac_3",
-      "opis": "Kratki opis radionice 3",
+      "id": "sarina_radionica",
+      "ime": "Sarina Radionica Reacta",
+      "datum": "2024-06-13",
+      "predavac": "Sara Condic",
+      "opis": "Radionica Reacta pruža sveobuhvatan pregled ove popularne JavaScript biblioteke za izgradnju korisničkih sučelja. Kroz interaktivne lekcije i projekte, sudionici će naučiti osnove Reacta, uključujući komponente, stanje, i životni ciklus komponenti. Također će istražiti napredne koncepte poput upravljanja stanjem aplikacije pomoću Reduxa i povezivanja s REST API-jima. Ova radionica pruža temelje potrebne za razvoj modernih, dinamičnih web aplikacija pomoću Reacta.",
       "broj_prijava": 1,
-      "img": "",
-      "teme": [
-        "C++"
-      ],
-      "tezina": "Senior"
-    },
-    {
-      "id": "8917",
-      "ime": "Sarini tutoriali",
-      "datum": "2024-05-25",
-      "predavac": "Sara",
-      "opis": "Lore ipsum",
-      "broj_prijava": 0,
-      "img": "",
-      "teme": [
-        "PHP"
-      ],
-      "tezina": "Mid"
-    },
-    {
-      "id": "dd62",
-      "ime": "Luka uci React",
-      "datum": "2024-05-04",
-      "predavac": "Luka Lukić",
-      "opis": "Ucenje Reacta",
-      "broj_prijava": 0,
-      "img": "",
-      "teme": [
-        "React",
-        "Express"
-      ],
-      "tezina": "Mid"
-    },
-    {
-      "id": "8e99",
-      "ime": "Radionica 4",
-      "datum": "2024-04-04",
-      "predavac": "Predavac 3",
-      "opis": "Lore ipsum 4",
-      "broj_prijava": 0,
-      "img": "",
-      "teme": [
-        "React",
-        "Express",
-        "Next.js"
-      ],
-      "tezina": "Senior"
-    },
-    {
-      "id": "radionica_9",
-      "ime": "Radionica 9",
-      "datum": "2024-04-11",
-      "predavac": "Dragan",
-      "opis": "Nesto o radionici",
-      "broj_prijava": 0,
-      "img": "",
+      "img": "https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png",
       "teme": [
         "React"
       ],
       "tezina": "Junior"
     },
     {
-      "id": "radionica_10",
-      "ime": "Radionica 10",
-      "datum": "2024-04-06",
-      "predavac": "Dragan",
-      "opis": "Dragans workshop",
+      "id": "radionica_express",
+      "ime": "Radionica Expressa",
+      "datum": "2024-05-22",
+      "predavac": "Luka Lukić",
+      "opis": "Radionica Express.js pruža brz i efikasan uvod u razvoj web aplikacija korištenjem Express.js, popularnog web frameworka za Node.js. Kroz praktične primjere i vježbe, sudionici će naučiti osnove rute, middleware-a i obrade zahtjeva te kako izgraditi dinamičke web stranice i API-je s lakoćom.",
       "broj_prijava": 0,
-      "img": "",
+      "img": "https://media.licdn.com/dms/image/D4E12AQEBg943ptCYpg/article-cover_image-shrink_720_1280/0/1686391647921?e=2147483647&v=beta&t=sTfwUvcIfW7Fuby7hMluDfuRJK3HfYMMWc2SyZR7-GA",
       "teme": [
-        "Express",
-        "Next.js"
+        "Express"
       ],
-      "tezina": "Mid"
+      "tezina": "Junior"
     }
   ],
   "predavaci": [
     {
-      "id": "predavac_1",
-      "ime": "Predavac 1",
+      "id": "ivan_ivanic",
+      "ime": "Ivan Ivanić",
       "biografija": "Lore ipsum",
-      "organizacija": "Organizacija 1",
+      "organizacija": "Organizacija 3",
+      "img": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMTRfcGhvdG9fb2ZfYWZyaWNhbl9hbWVyaWNhbl90ZWFjaGVyX2luX2NsYXNzcm9vbV8wYzY3NWFkMS05Nzk5LTRmY2YtOWQzZS0xNGQ0NWIxZTQ5ZWRfMS5qcGc.jpg",
       "teme": [
         "React",
-        "Express"
-      ]
+        "Express",
+        "Next.js"
+      ],
+      "radionice": []
     },
     {
-      "id": "predavac_2",
-      "ime": "Ante",
+      "id": "pero_peric",
+      "ime": "Pero Perić",
+      "biografija": "Lore ipsum Pero",
+      "organizacija": "Organizacija 1",
+      "img": "https://thumbs.dreamstime.com/b/portrait-young-male-teacher-background-school-blackboard-teacher-s-day-knowledge-day-back-to-school-study-159722312.jpg",
+      "teme": [
+        "React"
+      ],
+      "radionice": []
+    },
+    {
+      "id": "predavac_1",
+      "ime": "Sara Condic",
       "biografija": "Lore ipsum",
       "organizacija": "Organizacija 2",
+      "img": "https://img.lovepik.com/photo/20211209/small/lovepik-image-of-a-confident-english-teacher-picture_501712498.jpg",
       "teme": [
         "React",
-        "C++"
-      ]
-    },
-    {
-      "id": "predavac_3",
-      "ime": "Predavac 3",
-      "biografija": "Biografija predavaca 3",
-      "organizacija": "Organizacija 3",
-      "teme": [
-        "PHP"
-      ]
-    },
-    {
-      "id": "93df",
-      "ime": "Sara",
-      "biografija": "Lore ipsum",
-      "organizacija": "Organizacija 1",
-      "img": "",
-      "teme": [
-        "React",
-        "Express"
-      ]
-    },
-    {
-      "id": "98cd",
-      "ime": "Anamarija ",
-      "biografija": "Lore ipsum",
-      "organizacija": "Organizacija 3",
-      "img": "",
-      "teme": [
-        "PHP"
-      ]
-    },
-    {
-      "id": "fbab",
-      "ime": "Dragan",
-      "biografija": "Draganova biografija",
-      "organizacija": "Organizacija 5",
-      "img": "",
-      "teme": [
         "Next.js"
-      ]
+      ],
+      "radionice": []
     }
   ],
   "organizacije": [
     {
       "id": "organizacija_1",
       "ime": "Organizacija 1",
-      "opis": "Opis organizacije 1",
+      "opis": [],
       "radionice": [
-        "radionica_1"
+        "Sarini tutoriali",
+        "Tutoriali 2"
       ]
     },
     {
@@ -190,35 +84,12 @@
       ]
     },
     {
-      "id": "organizacija_3",
-      "ime": "Organizacija 3",
-      "opis": "Opis organizacije 3",
-      "radionice": [
-        "radionica_3"
-      ]
-    },
-    {
       "id": "organizacija_4",
       "ime": "Organizacija 4",
       "opis": "Lore ipsum 4",
       "radionice": [
         "Radionica 1",
         "Radionica 3"
-      ]
-    },
-    {
-      "id": "organizacija_5",
-      "ime": "Organizacija 5",
-      "opis": "Lore ipsum 5",
-      "radionice": []
-    },
-    {
-      "id": "organizacija_6",
-      "ime": "Organizacija 6",
-      "opis": "Lore ipsum 6",
-      "radionice": [
-        "Radionica 3",
-        "Sarini tutoriali"
       ]
     }
   ],
@@ -292,6 +163,22 @@
       "broj_mobitela": "04654",
       "razlog_prijave": "Lore ipsum",
       "radionica": "Radionica 1"
+    },
+    {
+      "id": "ada2",
+      "puno_ime": "Sara",
+      "email": "saraemial@gmail.com",
+      "broj_mobitela": "789456",
+      "razlog_prijave": "Lore ipsum",
+      "radionica": "Sarini tutoriali"
+    },
+    {
+      "id": "6a62",
+      "puno_ime": "Ante Antic",
+      "email": "anteantic@gmail.com",
+      "broj_mobitela": "0385999",
+      "razlog_prijave": "Lore ipsum Ante",
+      "radionica": "Sarina Radionica Reacta"
     }
   ]
 }

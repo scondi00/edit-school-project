@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Tablica from "../components/Tablica";
-import DodajNovuRadionicu from "../components/DodajNovuRadionicu";
+import DodajNovuRadionicu from "../components/Modals/DodajNovuRadionicu";
 //import { pageContext } from "./Administracija";
 
 export default function AdminRadionice() {
@@ -21,6 +21,8 @@ export default function AdminRadionice() {
     <div>
       <button onClick={() => setModalDodajRadionicu(true)}>Dodaj</button>
       <Tablica
+        ime={"radionice"}
+        set={setRadionice}
         result={radionice}
         stupci={[
           { label: "Ime", variable: "ime" },

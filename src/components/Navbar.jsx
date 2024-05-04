@@ -1,16 +1,39 @@
 import { Outlet, Link } from "react-router-dom";
 import { useContext } from "react";
 import { AdminContext } from "../App";
+import "../App.css";
+import Logo from "../assets/Code - school.png";
 
 export default function Navbar() {
-  const isAdmin = useContext(AdminContext);
+  const { isAdmin, setAdmin } = useContext(AdminContext);
+
   return (
     <div>
-      <nav>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/radionice"}>Radionice</Link>
-        <Link to={"/predavaci"}>Predavaci</Link>
-        {isAdmin && <Link to={"/administracija"}>Administracija</Link>}
+      <nav className="main-navbar">
+        <div className="link-div">
+          <img src={Logo} alt="logo-image" />
+          <Link to={"/"} className="link">
+            &lt; Home /&gt;
+          </Link>
+          <Link to={"/radionice"} className="link">
+            &lt; Radionice /&gt;
+          </Link>
+          <Link to={"/predavaci"} className="link">
+            &lt; Predavači /&gt;
+          </Link>
+          {isAdmin && (
+            <Link to={"/administracija"} className="link">
+              &lt; Administracija /&gt;
+            </Link>
+          )}
+        </div>
+
+        <button
+          className={`toggle-button ${isAdmin ? "on" : "off"}`}
+          onClick={() => setAdmin(!isAdmin)}
+        >
+          <span className="toggle-label">{isAdmin ? "Admin" : "Klijent"}</span>
+        </button>
       </nav>
       <Outlet />
     </div>

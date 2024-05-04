@@ -6,7 +6,7 @@ export default function Prijava({ setModal, currentRadionica }) {
     puno_ime: "",
     email: "",
     razlog_prijave: "",
-    broj_mobitela: 0,
+    broj_mobitela: "",
     radionica: currentRadionica.ime,
   });
 
@@ -64,14 +64,14 @@ export default function Prijava({ setModal, currentRadionica }) {
             X
           </button>
           <div className="modal-title">
-            <h2>Prijava na {currentRadionica.ime} </h2>
+            <h2>Prijava na: {currentRadionica.ime} </h2>
           </div>
           <div className="modal-body">
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
                 name="puno_ime"
-                placeholder="puno ime"
+                placeholder="Puno ime polaznika..."
                 value={novaPrijava.puno_ime}
                 onChange={(e) =>
                   setNovaPrijava({ ...novaPrijava, puno_ime: e.target.value })
@@ -81,7 +81,7 @@ export default function Prijava({ setModal, currentRadionica }) {
               <input
                 type="email"
                 name="email"
-                placeholder="email"
+                placeholder="Email polaznika..."
                 value={novaPrijava.email}
                 onChange={(e) =>
                   setNovaPrijava({ ...novaPrijava, email: e.target.value })
@@ -91,7 +91,7 @@ export default function Prijava({ setModal, currentRadionica }) {
               <input
                 type="tel"
                 name="broj_mobitela"
-                placeholder="broj mobitela"
+                placeholder="Broj telefona..."
                 value={novaPrijava.broj_mobitela}
                 onChange={(e) =>
                   setNovaPrijava({
@@ -104,7 +104,7 @@ export default function Prijava({ setModal, currentRadionica }) {
               <input
                 type="text"
                 name="razlog_prijave"
-                placeholder="razlog prijave"
+                placeholder="Upišite razlog prijave..."
                 value={novaPrijava.razlog_prijave}
                 onChange={(e) =>
                   setNovaPrijava({

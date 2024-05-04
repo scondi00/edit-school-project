@@ -21,8 +21,13 @@ export default function AdminOrganizacije() {
     <div>
       <button onClick={() => setModalDodajOrg(true)}>Dodaj</button>
       <Tablica
+        ime={"organizacije"}
+        set={setOrganizacije}
         result={organizacije}
-        stupci={[{ label: "Ime", variable: "ime" }]}
+        stupci={[
+          { label: "Ime", variable: "ime" },
+          { label: "Radionice", variable: "radionice" },
+        ]}
       />
       {modalDodajOrg && (
         <DodajOrganizaciju

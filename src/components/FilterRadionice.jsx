@@ -48,11 +48,18 @@ export default function FilterRadionice({
 
   return (
     <div>
-      <div className="radionice-filter">
-        Filtriraj teme:
+      <div className="filter">
+        <p
+          style={{
+            fontSize: "30px",
+            color: "rgb(25, 100, 126)",
+          }}
+        >
+          Filtriraj teme:
+        </p>
         <div>
           {teme.map((r) => (
-            <div key={r.id}>
+            <div key={r.id} className="checkbox-container">
               <input
                 type="checkbox"
                 id={r.id}
@@ -66,9 +73,16 @@ export default function FilterRadionice({
         </div>
         <hr />
         <div>
-          Filtriraj težinu:
+          <p
+            style={{
+              fontSize: "30px",
+              color: "rgb(25, 100, 126)",
+            }}
+          >
+            Filtriraj težine:
+          </p>
           {tezine.map((r) => (
-            <div key={r.id}>
+            <div key={r.id} className="checkbox-container">
               <input
                 type="checkbox"
                 id={r.id}

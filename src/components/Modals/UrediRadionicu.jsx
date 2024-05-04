@@ -14,6 +14,7 @@ export default function UrediRadionicu({
     predavac: "",
     opis: "",
     datum: "",
+    img: "",
     teme: [],
     tezina: "",
   });
@@ -41,6 +42,9 @@ export default function UrediRadionicu({
     }
     if (editRadionica.datum !== "") {
       data.datum = editRadionica.datum;
+    }
+    if (editRadionica.img !== "") {
+      data.img = editRadionica.img;
     }
     if (editRadionica.teme.length) {
       data.teme = editRadionica.teme;
@@ -106,72 +110,78 @@ export default function UrediRadionicu({
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalUrediRadionicu(false)}>X</button>
+        <button
+          className="exit-modal"
+          onClick={() => setModalUrediRadionicu(false)}
+        >
+          X
+        </button>
         <h2>Uredi radionicu: {currentRadionica.ime}</h2>
-
-        <form onSubmit={postIzmjenu}>
-          <div>
-            Promjeni predavaca{" "}
-            <input
-              type="text"
-              name="predavac"
-              value={editRadionica.predavac}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            Promjeni opis:{" "}
-            <input
-              type="text"
-              name="opis"
-              value={editRadionica.opis}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            Promjeni datum:
-            <input
-              type="date"
-              name="datum"
-              value={editRadionica.datum}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label>
-              {" "}
-              Promjeni tezinu
-              <select
-                name="tezina"
+        <div className="modal-body">
+          <form onSubmit={postIzmjenu}>
+            <div>
+              Promjeni predavača:{" "}
+              <input
+                type="text"
+                name="predavac"
+                value={editRadionica.predavac}
                 onChange={handleChange}
-                value={editRadionica.tezina}
-              >
-                <option value=""> --- </option>
-                {tezine.map((r) => (
-                  <option key={r.id}>{r.ime}</option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <div>
-            <label>
-              {" "}
-              Promjeni teme:
-              {teme.map((r) => (
-                <div key={r.id}>
-                  <label>{r.ime}</label>
-                  <input
-                    type="checkbox"
-                    name="teme"
-                    value={r.ime}
-                    onChange={handleOdabraneTeme}
-                  />
-                </div>
+              />
+            </div>
+            <div>
+              Promjeni sliku:{" "}
+              <input
+                type="text"
+                name="img"
+                value={editRadionica.img}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              Promjeni opis:{" "}
+              <input
+                type="text"
+                name="opis"
+                value={editRadionica.opis}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              Promjeni datum:
+              <input
+                type="date"
+                name="datum"
+                value={editRadionica.datum}
+                onChange={handleChange}
+              />
+            </div>
+            Promjeni težinu:
+            <select
+              name="tezina"
+              onChange={handleChange}
+              value={editRadionica.tezina}
+            >
+              <option value=""> --- </option>
+              {tezine.map((r) => (
+                <option key={r.id}>{r.ime}</option>
               ))}
-            </label>
-          </div>
-          <input type="submit" value="Spremi" />
-        </form>
+            </select>
+            <hr />
+            <p>Promjeni teme:</p>
+            {teme.map((r) => (
+              <div key={r.id} className="odaberi-temu">
+                <input
+                  type="checkbox"
+                  name="teme"
+                  value={r.ime}
+                  onChange={handleOdabraneTeme}
+                />
+                <label>{r.ime}</label>
+              </div>
+            ))}
+            <input type="submit" value="Spremi" />
+          </form>
+        </div>
       </div>
     </div>
   );

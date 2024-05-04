@@ -31,12 +31,18 @@ export default function FilterPredavaci({
   };
 
   return (
-    <div className="predavaci-filter-div">
-      Filtriraj:
+    <div className="filter">
+      <p
+        style={{
+          fontSize: "30px",
+          color: "rgb(25, 100, 126)",
+        }}
+      >
+        Filtriraj teme:
+      </p>
       <div>
-        Po temama:
         {teme.map((r) => (
-          <div key={r.id}>
+          <div key={r.id} className="checkbox-container">
             <input
               type="checkbox"
               id={r.id}
@@ -49,10 +55,17 @@ export default function FilterPredavaci({
         ))}
       </div>
       <hr />
-      Po organizacijama:
+      <p
+        style={{
+          fontSize: "30px",
+          color: "rgb(25, 100, 126)",
+        }}
+      >
+        Filtriraj organizacije:
+      </p>
       <div>
         {organizacije.map((r) => (
-          <div key={r.id}>
+          <div key={r.id} className="checkbox-container">
             <input
               type="checkbox"
               id={r.id}

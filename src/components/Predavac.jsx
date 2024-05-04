@@ -7,7 +7,7 @@ export default function Predavac({
   setCurrentPredavac,
   setModalUrediPredavac,
 }) {
-  const isAdmin = useContext(AdminContext);
+  const { isAdmin, setAdmin } = useContext(AdminContext);
   const navigate = useNavigate();
 
   const handleUrediPredavaca = () => {
@@ -21,20 +21,61 @@ export default function Predavac({
 
   return (
     <div className="predavac">
-      <p>Predavac: {result.ime}</p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          className="slike-predavac"
+          src={result.img}
+          alt="slika_predavaca"
+        />
+      </div>
+      <p
+        style={{
+          fontSize: "35px",
+          color: "rgb(25, 100, 126)",
+          display: "flex",
+          justifyContent: "center",
+          fontWeight: "bold",
+        }}
+      >
+        {result.ime}
+      </p>
       <p>Biografija: {result.biografija}</p>
       <p>Organizacija: {result.organizacija}</p>
       <hr />
-      {result.teme.map((r, index) => (
-        <p key={index}>{r}</p>
-      ))}
+      <div style={{ textAlign: "center" }}>
+        {result.teme.map((r, index) => (
+          <div
+            key={index}
+            style={{
+              display: "inline",
+              color: "rgb(25, 100, 126)",
+              fontSize: "20px",
+              alignItems: "center",
+            }}
+          >
+            {r} /
+          </div>
+        ))}
+      </div>
       <br />
-      <button onClick={pregledajRadionice}>Pregled radionica</button>
-      {isAdmin && (
-        <div>
-          <button onClick={handleUrediPredavaca}>Uredi</button>
-        </div>
-      )}
+      <hr />
+      <div style={{ textAlign: "center" }}>
+        <button className="pregled-btn" onClick={pregledajRadionice}>
+          Pregled radionica
+        </button>
+        {isAdmin && (
+          <div>
+            <button className="uredi-btn" onClick={handleUrediPredavaca}>
+              Uredi
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

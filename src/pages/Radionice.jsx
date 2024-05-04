@@ -1,17 +1,17 @@
 import { useEffect, useState, useContext } from "react";
-import "../radionice.css";
+import "../css-files/radionice.css";
 import axios from "axios";
 import Radionica from "../components/Radionica";
 import FilterRadionice from "../components/FilterRadionice";
 import Prijava from "../components/Modals/Prijava";
 import { AdminContext } from "../App";
-import DodajNovuRadionicu from "../components/DodajNovuRadionicu";
+import DodajNovuRadionicu from "../components/Modals/DodajNovuRadionicu";
 import UrediRadionicu from "../components/Modals/UrediRadionicu";
 
 export default function Radionice() {
   const radioniceURL = "http://localhost:3001/radionice";
 
-  const isAdmin = useContext(AdminContext);
+  const { isAdmin, setAdmin } = useContext(AdminContext);
 
   const [radionice, setRadionice] = useState([]); // radionice, sve ili filtrirane
 
@@ -52,24 +52,29 @@ export default function Radionice() {
       .catch((err) => alert(err));
   }, [filterTeme, filterTezina]);
 
+  console.log(isAdmin);
+
   return (
-    <div>
-      <h1>Radionice</h1>
-      {isAdmin && (
-        <button onClick={() => setDodajRadionicu(true)}>
-          +Dodaj novu radionicu
-        </button>
-      )}
-      <div style={{ display: "flex", marginTop: "20px" }}>
+    <div className="page-div">
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="title">Radionice</div>
+        {isAdmin && (
+          <button
+            className="add-workshop-btn"
+            onClick={() => setDodajRadionicu(true)}
+          >
+            + Dodaj novu radionicu
+          </button>
+        )}
+      </div>
+      <div className="filter-i-radionice">
         <FilterRadionice
           filterTeme={filterTeme}
           setFilterTeme={setFilterTeme}
           filterTezina={filterTezina}
           setFilterTezina={setFilterTezina}
         />
-
         <div className="radionice">
-          Radionice:
           {radionice.map((r) => (
             <Radionica
               key={r.id}
@@ -90,7 +95,7 @@ export default function Radionice() {
         )}
         {dodajRadionicu && (
           <DodajNovuRadionicu
-            setDodajRadionicu={setDodajRadionicu}
+            setModalDodajRadionicu={setDodajRadionicu}
             setRadionice={setRadionice}
           />
         )}

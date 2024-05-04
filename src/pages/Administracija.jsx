@@ -2,7 +2,7 @@ import AdminNavbar from "../components/AdminNavbar";
 import { useContext, useState, createContext } from "react";
 import { AdminContext } from "../App";
 import Tablica from "../components/Tablica";
-import DodajNovuRadionicu from "../components/DodajNovuRadionicu";
+import DodajNovuRadionicu from "../components/Modals/DodajNovuRadionicu";
 import DodajNovogPredavaca from "../components/Modals/DodajNovogPredavaca";
 import DodajOrganizaciju from "../components/Modals/DodajOrganizaciju";
 
@@ -11,7 +11,7 @@ export const pageContext = createContext();
 export default function Administracija() {
   const [page, setPage] = useState("radionice"); //pratimo na kojem smo page-u
 
-  const isAdmin = useContext(AdminContext); // pratimo jesmo li klijent ili admin
+  const { isAdmin, setAdmin } = useContext(AdminContext); // pratimo jesmo li klijent ili admin
   // const [modal, setModal] = useState(false);
   // const [dodajRadionicu, setDodajRadionicu] = useState(false);
   // const [dodajOrganizaciju, setDodajOrganizaciju] = useState(false);

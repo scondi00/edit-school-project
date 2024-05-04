@@ -20,7 +20,9 @@ export default function AdminPredavaci() {
     <div>
       <button onClick={() => setModalDodajPredavaca(true)}>Dodaj</button>
       <Tablica
+        ime={"predavaci"}
         result={predavaci}
+        set={setPredavaci}
         stupci={[
           { label: "Ime", variable: "ime" },
           { label: "Organizacija", variable: "organizacija" },

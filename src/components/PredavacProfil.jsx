@@ -37,6 +37,7 @@ export default function PredavacProfil() {
       {currentPredavac && (
         <div className="profil-div">
           <div className="profil-predavaca">
+            <img src={currentPredavac.img} alt="slika_predavaca" />
             <p>Ime: {currentPredavac.ime}</p>
             <p>Biografija: {currentPredavac.biografija}</p>
             <p>Organizacija:{currentPredavac.organizacija}</p>

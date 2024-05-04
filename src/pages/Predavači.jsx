@@ -4,12 +4,12 @@ import Predavac from "../components/Predavac";
 import FilterPredavaci from "../components/FilterPredavaci";
 import DodajNovogPredavaca from "../components/Modals/DodajNovogPredavaca";
 import UrediPredavača from "../components/Modals/UrediPredavača";
-import "../predavaci.css";
+import "../css-files/predavaci.css";
 
 import { AdminContext } from "../App";
 
 export default function Predavači() {
-  const isAdmin = useContext(AdminContext);
+  const { isAdmin, setAdmin } = useContext(AdminContext);
   const [predavaci, setPredavaci] = useState([]); // predavaci, svi ili filtrirani
   const [filterTeme, setFilterTeme] = useState([]); // dodajemo po kojim cemo temama filtrirati
   const [filterOrganizacija, setFilterOrganizacija] = useState([]); // dodajemo po kojim cemo organizacijama filtrirati
@@ -67,16 +67,21 @@ export default function Predavači() {
 
   return (
     <div>
-      <h1>Predavači</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div className="title">Predavači</div>
 
-      {isAdmin && (
-        <button onClick={() => setModalNoviPredavac(true)}>
-          {" "}
-          + Dodaj novog predavača
-        </button>
-      )}
+        {isAdmin && (
+          <button
+            className="add-workshop-btn"
+            onClick={() => setModalNoviPredavac(true)}
+          >
+            {" "}
+            + Dodaj novog predavača
+          </button>
+        )}
+      </div>
 
-      <div style={{ display: "flex", marginTop: "20px" }}>
+      <div className="filter-i-radionice">
         <FilterPredavaci
           filterTeme={filterTeme}
           filterOrganizacija={filterOrganizacija}
@@ -98,7 +103,10 @@ export default function Predavači() {
         </div>
       </div>
       {modalNoviPredavac && (
-        <DodajNovogPredavaca setModalNoviPredavac={setModalNoviPredavac} />
+        <DodajNovogPredavaca
+          setModalDodajPredavaca={setModalNoviPredavac}
+          setPredavaci={setPredavaci}
+        />
       )}
       {modalUrediPredavaca && (
         <UrediPredavača
@@ -106,6 +114,7 @@ export default function Predavači() {
           organizacije={organizacije}
           currentPredavac={currentPredavac}
           setModalUrediPredavac={setModalUrediPredavac}
+          setPredavaci={setPredavaci}
         />
       )}
     </div>
