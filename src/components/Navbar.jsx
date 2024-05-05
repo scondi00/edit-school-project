@@ -10,22 +10,21 @@ export default function Navbar() {
   return (
     <div>
       <nav className="main-navbar">
-        <div className="link-div">
+        <div className="img-link-div">
           <img src={Logo} alt="logo-image" />
-          <Link to={"/"} className="link">
-            &lt; Home /&gt;
-          </Link>
-          <Link to={"/radionice"} className="link">
-            &lt; Radionice /&gt;
-          </Link>
-          <Link to={"/predavaci"} className="link">
-            &lt; Predavači /&gt;
-          </Link>
-          {isAdmin && (
-            <Link to={"/administracija"} className="link">
-              &lt; Administracija /&gt;
+          <div className="link-div">
+            <Link to={"/radionice"} className="link">
+              &lt; Radionice /&gt;
             </Link>
-          )}
+            <Link to={"/predavaci"} className="link">
+              &lt; Predavači /&gt;
+            </Link>
+            {isAdmin && (
+              <Link to={"/administracija"} className="link">
+                &lt; Administracija /&gt;
+              </Link>
+            )}
+          </div>
         </div>
 
         <button

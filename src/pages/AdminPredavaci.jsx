@@ -17,8 +17,7 @@ export default function AdminPredavaci() {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => setModalDodajPredavaca(true)}>Dodaj</button>
+    <div className="admin-radionice-div">
       <Tablica
         ime={"predavaci"}
         result={predavaci}
@@ -28,6 +27,14 @@ export default function AdminPredavaci() {
           { label: "Organizacija", variable: "organizacija" },
         ]}
       />
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <button
+          className="admin-add-btn"
+          onClick={() => setModalDodajPredavaca(true)}
+        >
+          +
+        </button>
+      </div>
       {modalDodajPredavac && (
         <DodajNovogPredavaca
           setModalDodajPredavaca={setModalDodajPredavaca}

@@ -3,7 +3,6 @@ import { useState, createContext } from "react";
 
 import "./App.css";
 
-import HomePage from "./pages/HomePage";
 import Radionice from "./pages/Radionice";
 import Predavači from "./pages/Predavači";
 import Navbar from "./components/Navbar";
@@ -22,8 +21,6 @@ function App() {
     <AdminContext.Provider value={{ isAdmin, setAdmin }}>
       <Routes>
         <Route path="/" element={<Navbar />}>
-          <Route exact path="/" element={<HomePage />} />
-
           <Route path="/radionice" element={<Radionice />} />
           <Route path="/predavaci" element={<Predavači />} />
           <Route path="/administracija" element={<Administracija />}>

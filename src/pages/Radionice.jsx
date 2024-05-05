@@ -52,8 +52,6 @@ export default function Radionice() {
       .catch((err) => alert(err));
   }, [filterTeme, filterTezina]);
 
-  console.log(isAdmin);
-
   return (
     <div className="page-div">
       <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -104,8 +102,6 @@ export default function Radionice() {
             setModalUrediRadionicu={setModalUrediRadionicu}
             currentRadionica={currentRadionica}
             setRadionice={setRadionice}
-            setFilterTezina={setFilterTezina}
-            setFilterTeme={setFilterTeme}
           />
         )}
       </div>

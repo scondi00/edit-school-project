@@ -17,26 +17,6 @@
   width: 350px;
 }
 
-.profil-predavaca {
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 20px;
-  margin-right: 50px;
-}
-.radionice-profila {
-  padding: 50px;
-  background-color: violet;
-}
-.profil-div {
-  display: flex;
-}
-.radionica-profil {
-  background-color: rgb(201, 201, 201);
-  padding: 30px;
-  border: 1px solid black;
-  border-radius: 15px;
-}
-
 .slike-predavac {
   width: 200px;
   height: 200px;
@@ -59,4 +39,44 @@
 
 .pregled-btn:hover {
   background-color: rgb(59, 184, 226);
+}
+
+/* ---------------PROFIL ---------------------------------------------*/
+.profil-div {
+  display: flex;
+  margin-top: 25px;
+}
+.profil-predavaca {
+  box-shadow: 1px 1px 10px rgba(25, 100, 126, 0.652);
+  border-radius: 15px;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 300px;
+}
+
+.radionica-profil {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px rgb(25, 101, 126);
+  padding: 30px;
+  border-radius: 15px;
+  width: 800px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.profil-radionice-div {
+  background-color: rgba(25, 101, 126, 0.802);
+  box-shadow: 1px 1px 10px rgba(25, 100, 126, 0.652);
+  border-radius: 30px;
+  padding: 30px;
+}
+.no-radionice {
+  padding: 30px;
+  border-radius: 15px;
+  width: 800px;
+  height: 200px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: white;
 }

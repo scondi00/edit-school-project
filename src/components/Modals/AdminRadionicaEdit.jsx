@@ -11,6 +11,7 @@ export default function AdminRadionicaEdit({ item, setModalEdit, set }) {
     datum: "",
     teme: [],
     tezina: "",
+    broj_prijava: "",
   });
 
   useEffect(() => {
@@ -42,6 +43,9 @@ export default function AdminRadionicaEdit({ item, setModalEdit, set }) {
     }
     if (editRadionica.tezina !== "") {
       data.tezina = editRadionica.tezina;
+    }
+    if (editRadionica.broj_prijava !== "") {
+      data.broj_prijava = editRadionica.broj_prijava;
     }
 
     return data;
@@ -91,71 +95,96 @@ export default function AdminRadionicaEdit({ item, setModalEdit, set }) {
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalEdit(false)}>X</button>
+        <button className="exit-modal" onClick={() => setModalEdit(false)}>
+          X
+        </button>
         <h2>Uredi radionicu: {item.ime}</h2>
-        <form onSubmit={postIzmjenu}>
-          <div>
-            Promjeni predavaca{" "}
-            <input
-              type="text"
-              name="predavac"
-              value={editRadionica.predavac}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            Promjeni opis:{" "}
-            <input
-              type="text"
-              name="opis"
-              value={editRadionica.opis}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            Promjeni datum:
-            <input
-              type="date"
-              name="datum"
-              value={editRadionica.datum}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label>
-              {" "}
-              Promjeni tezinu
-              <select
-                name="tezina"
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Nije nužuno mijenjati sve podatke.
+        </p>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Ukoliko se podatak ne promijeni, ostat će stara vrijednost.
+        </p>
+        <div className="modal-body">
+          <form onSubmit={postIzmjenu}>
+            <div>
+              Promjeni ime predavača{" "}
+              <input
+                type="text"
+                name="predavac"
+                value={editRadionica.predavac}
                 onChange={handleChange}
-                value={editRadionica.tezina}
+              />
+            </div>
+            <label>
+              Uredi broj prijava:
+              <select
+                className="modal-input"
+                value={editRadionica.broj_prijava}
+                onChange={handleChange}
+                name="broj_prijava" // Name set to identify which state is being updated
               >
-                <option value=""> --- </option>
-                {tezine.map((r) => (
-                  <option key={r.id}>{r.ime}</option>
+                <option value="">Choose...</option>
+                {[...Array(21).keys()].map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
                 ))}
+                <option value="">Ne želim promjeniti broj prijava</option>
               </select>
             </label>
-          </div>
-          <div>
-            <label>
-              {" "}
+            <div>
+              Promjeni opis:{" "}
+              <input
+                type="text"
+                name="opis"
+                value={editRadionica.opis}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div>
+              Promjeni datum:
+              <input
+                type="date"
+                name="datum"
+                value={editRadionica.datum}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>
+                {" "}
+                Promjeni težinu
+                <select
+                  name="tezina"
+                  onChange={handleChange}
+                  value={editRadionica.tezina}
+                >
+                  <option value=""> --- </option>
+                  {tezine.map((r) => (
+                    <option key={r.id}>{r.ime}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <div>
               Promjeni teme:
               {teme.map((r) => (
-                <div key={r.id}>
-                  <label>{r.ime}</label>
+                <div key={r.id} className="odaberi-temu">
                   <input
                     type="checkbox"
                     name="teme"
                     value={r.ime}
                     onChange={handleOdabraneTeme}
                   />
+                  <label>{r.ime}</label>
                 </div>
               ))}
-            </label>
-          </div>
-          <input type="submit" value="Spremi" />
-        </form>
+            </div>
+            <input type="submit" value="Spremi" />
+          </form>
+        </div>
       </div>
     </div>
   );

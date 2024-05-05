@@ -35,7 +35,9 @@ export default function RedakTablice({ item, stupci, ime, set }) {
         <td key={index}>{item[stupac.variable]}</td>
       ))}
       <td>
-        <button onClick={() => setModalEdit(true)}>Uredi</button>
+        <button className="admin-edit-btn" onClick={() => setModalEdit(true)}>
+          Uredi
+        </button>
         {modalEdit && componentToRender}
       </td>
       <td>

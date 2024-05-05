@@ -84,50 +84,60 @@ export default function AdminPredavacEdit({ item, setModalEdit, set }) {
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalEdit(false)}>X</button>
+        <button className="exit-modal" onClick={() => setModalEdit(false)}>
+          X
+        </button>
         <h2>Uredi predavača: {item.ime}</h2>
-        <form onSubmit={urediPredavaca}>
-          <input
-            type="text"
-            name="ime"
-            placeholder="ime"
-            value={editPredavaca.ime}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="biografija"
-            placeholder="biografija"
-            value={editPredavaca.biografija}
-            onChange={changeInput}
-          />
-          Odaberi organizaciju
-          <select
-            name="organizacija"
-            value={editPredavaca.organizacija}
-            onChange={changeInput}
-          >
-            <option value={""}>---</option>
-            {organizacije.map((r) => (
-              <option key={r.id}>{r.ime}</option>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Nije nužuno mijenjati sve podatke.
+        </p>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Ukoliko se podatak ne promijeni, ostat će stara vrijednost.
+        </p>
+        <div className="modal-body">
+          <form onSubmit={urediPredavaca}>
+            <input
+              type="text"
+              name="ime"
+              placeholder="ime"
+              value={editPredavaca.ime}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="biografija"
+              placeholder="biografija"
+              value={editPredavaca.biografija}
+              onChange={changeInput}
+            />
+            Odaberi organizaciju
+            <select
+              name="organizacija"
+              value={editPredavaca.organizacija}
+              onChange={changeInput}
+            >
+              <option value={""}>---</option>
+              {organizacije.map((r) => (
+                <option key={r.id}>{r.ime}</option>
+              ))}
+            </select>
+            <br />
+            Odaberi teme predavača:
+            {teme.map((r) => (
+              <div key={r.id} className="odaberi-temu">
+                <input
+                  type="checkbox"
+                  id={r.id}
+                  name="teme"
+                  value={r.ime}
+                  onChange={handleOdabraneTeme}
+                />
+                <label>{r.ime}</label>
+              </div>
             ))}
-          </select>
-          <br />
-          Odaberi temu:
-          {teme.map((r) => (
-            <div key={r.id}>
-              <label>{r.ime}</label>
-              <input
-                type="checkbox"
-                id={r.id}
-                name="teme"
-                value={r.ime}
-                onChange={handleOdabraneTeme}
-              />
-            </div>
-          ))}
-          <input type="submit" value="Spremi promjene" />
-        </form>
+            <input type="submit" value="Spremi promjene" />
+          </form>
+        </div>
       </div>
     </div>
   );

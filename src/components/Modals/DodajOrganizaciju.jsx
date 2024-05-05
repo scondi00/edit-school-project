@@ -64,51 +64,56 @@ export default function DodajOrganizaciju({
   return (
     <div className="modal-background">
       <div className="modal-container">
-        <button onClick={() => setModalDodajOrg(false)}>X</button>
+        <button className="exit-modal" onClick={() => setModalDodajOrg(false)}>
+          X
+        </button>
         <h2>Dodaj novu organizaciju:</h2>
-        <form onSubmit={dodajNovuOrg}>
-          <input
-            type="text"
-            name="id"
-            placeholder="id"
-            required
-            value={novaOrg.id}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="ime"
-            placeholder="ime"
-            required
-            value={novaOrg.ime}
-            onChange={changeInput}
-          />
-          <input
-            type="text"
-            name="opis"
-            placeholder="opis"
-            required
-            value={novaOrg.opis}
-            onChange={changeInput}
-          />
-          <label>
-            {" "}
-            Sudjeluje li Vaša nova organizacija u nekoj od radionica?
-            <input type="checkbox" value="" /> Ne sudjeluje
+        <div className="modal-body">
+          <form onSubmit={dodajNovuOrg}>
+            <input
+              type="text"
+              name="id"
+              placeholder="Dodijeli ID..."
+              required
+              value={novaOrg.id}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="ime"
+              placeholder="Ime nove organizacije..."
+              required
+              value={novaOrg.ime}
+              onChange={changeInput}
+            />
+            <input
+              type="text"
+              name="opis"
+              placeholder="Opis nove organizacije..."
+              required
+              value={novaOrg.opis}
+              onChange={changeInput}
+            />
+            <p> Sudjeluje li Vaša nova organizacija u nekoj od radionica?</p>
+            <div className="odaberi-temu">
+              {" "}
+              <input type="checkbox" value="" /> Ne sudjeluje
+            </div>
+
             {radionice.map((r) => (
-              <div key={r.id}>
+              <div key={r.id} className="odaberi-temu">
                 <input
                   type="checkbox"
                   name="radionice"
                   value={r.ime}
                   onChange={handleOdabraneRadionice}
-                />{" "}
+                />
                 {r.ime}
               </div>
             ))}
-          </label>
-          <input type="submit" value="Dodaj" />
-        </form>
+            <input type="submit" value="Dodaj" />
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -91,6 +91,12 @@ export default function UrediPredavača({
         </button>
 
         <h2>Uredi predavača: {currentPredavac.ime}</h2>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Nije nužuno mijenjati sve podatke.
+        </p>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Ukoliko se podatak ne promijeni, ostat će stara vrijednost.
+        </p>
         <div className="modal-body">
           <form onSubmit={urediPredavaca}>
             <input

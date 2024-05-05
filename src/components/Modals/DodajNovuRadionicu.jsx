@@ -19,7 +19,6 @@ export default function DodajNovuRadionicu({
 
   const [teme, setTeme] = useState([]);
   const [tezine, setTezine] = useState([]);
-  //const [predavaci, setPredavaci] = useState([]); // ako postoji predavac, dodat cemo mu radionicu
 
   useEffect(() => {
     axios
@@ -30,10 +29,10 @@ export default function DodajNovuRadionicu({
       .get("http://localhost:3001/tezine")
       .then((r) => setTezine(r.data))
       .catch((error) => alert(error));
-    // axios
-    //   .get("http://localhost:3001/predavaci")
-    //   .then((r) => setPredavaci(r.data))
-    //   .catch((error) => alert(error));
+    axios
+      .get("http://localhost:3001/predavaci")
+      .then((r) => setPredavaci(r.data))
+      .catch((error) => alert(error));
   }, []);
 
   const obradiPodatke = (objekt) => ({

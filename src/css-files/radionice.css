@@ -1,6 +1,8 @@
 .radionice {
   width: 1000px;
-  padding: 20px;
+  padding: 50px;
+  background-color: rgb(40, 175, 176);
+  border-radius: 30px;
 }
 
 /* RADIONICA */
@@ -9,6 +11,7 @@
   border-radius: 30px;
   margin-bottom: 30px;
   padding: 20px;
+  background-color: white;
 }
 
 .slika-radionice {

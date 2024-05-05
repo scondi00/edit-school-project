@@ -1,29 +1,25 @@
 {
   "radionice": [
     {
-      "id": "sarina_radionica",
-      "ime": "Sarina Radionica Reacta",
+      "id": "radionica_reacta",
+      "ime": "Radionica Reacta",
       "datum": "2024-06-13",
-      "predavac": "Sara Condic",
+      "predavac": "Ivan Ivanić",
       "opis": "Radionica Reacta pruža sveobuhvatan pregled ove popularne JavaScript biblioteke za izgradnju korisničkih sučelja. Kroz interaktivne lekcije i projekte, sudionici će naučiti osnove Reacta, uključujući komponente, stanje, i životni ciklus komponenti. Također će istražiti napredne koncepte poput upravljanja stanjem aplikacije pomoću Reduxa i povezivanja s REST API-jima. Ova radionica pruža temelje potrebne za razvoj modernih, dinamičnih web aplikacija pomoću Reacta.",
-      "broj_prijava": 1,
+      "broj_prijava": "1",
       "img": "https://logos-world.net/wp-content/uploads/2023/08/React-Symbol.png",
-      "teme": [
-        "React"
-      ],
+      "teme": ["React"],
       "tezina": "Junior"
     },
     {
       "id": "radionica_express",
       "ime": "Radionica Expressa",
       "datum": "2024-05-22",
-      "predavac": "Luka Lukić",
+      "predavac": "Ivan Ivanić",
       "opis": "Radionica Express.js pruža brz i efikasan uvod u razvoj web aplikacija korištenjem Express.js, popularnog web frameworka za Node.js. Kroz praktične primjere i vježbe, sudionici će naučiti osnove rute, middleware-a i obrade zahtjeva te kako izgraditi dinamičke web stranice i API-je s lakoćom.",
       "broj_prijava": 0,
       "img": "https://media.licdn.com/dms/image/D4E12AQEBg943ptCYpg/article-cover_image-shrink_720_1280/0/1686391647921?e=2147483647&v=beta&t=sTfwUvcIfW7Fuby7hMluDfuRJK3HfYMMWc2SyZR7-GA",
-      "teme": [
-        "Express"
-      ],
+      "teme": ["Express"],
       "tezina": "Junior"
     }
   ],
@@ -31,66 +27,30 @@
     {
       "id": "ivan_ivanic",
       "ime": "Ivan Ivanić",
-      "biografija": "Lore ipsum",
-      "organizacija": "Organizacija 3",
+      "biografija": "Ivan je iskusni web developer s bazom u Splitu. Svoje stručno znanje usmjerio je prema modernim tehnologijama poput Reacta, Expressa i Next.js-a. Kroz godine rada, Ivan je stekao duboko razumijevanje ovih alata i primjenjuje ih u razvoju skalabilnih web aplikacija. Osim što aktivno radi na projektima, Ivan također voli dijeliti svoje znanje s drugima putem predavanja na lokalnim meetupima i online tečajeva.",
+      "organizacija": "Organizacija 1",
       "img": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMTRfcGhvdG9fb2ZfYWZyaWNhbl9hbWVyaWNhbl90ZWFjaGVyX2luX2NsYXNzcm9vbV8wYzY3NWFkMS05Nzk5LTRmY2YtOWQzZS0xNGQ0NWIxZTQ5ZWRfMS5qcGc.jpg",
-      "teme": [
-        "React",
-        "Express",
-        "Next.js"
-      ],
-      "radionice": []
+      "teme": ["React", "Express", "Next.js"]
     },
     {
       "id": "pero_peric",
       "ime": "Pero Perić",
-      "biografija": "Lore ipsum Pero",
-      "organizacija": "Organizacija 1",
-      "img": "https://thumbs.dreamstime.com/b/portrait-young-male-teacher-background-school-blackboard-teacher-s-day-knowledge-day-back-to-school-study-159722312.jpg",
-      "teme": [
-        "React"
-      ],
-      "radionice": []
-    },
-    {
-      "id": "predavac_1",
-      "ime": "Sara Condic",
-      "biografija": "Lore ipsum",
+      "biografija": "Pero je strastveni programer iz Zagreba s godinama iskustva u web razvoju. Specijalizirao se za React i ima duboko razumijevanje moderne web tehnologije. Kao predavač, Marko dijeli svoje znanje o Reactu na lokalnim i međunarodnim radionicama i konferencijama. Njegova strast za podučavanjem i jasna komunikacija čine ga omiljenim predavačem među studentima i kolegama.",
       "organizacija": "Organizacija 2",
-      "img": "https://img.lovepik.com/photo/20211209/small/lovepik-image-of-a-confident-english-teacher-picture_501712498.jpg",
-      "teme": [
-        "React",
-        "Next.js"
-      ],
-      "radionice": []
+      "img": "https://thumbs.dreamstime.com/b/portrait-young-male-teacher-background-school-blackboard-teacher-s-day-knowledge-day-back-to-school-study-159722312.jpg",
+      "teme": ["React"]
     }
   ],
   "organizacije": [
     {
       "id": "organizacija_1",
       "ime": "Organizacija 1",
-      "opis": [],
-      "radionice": [
-        "Sarini tutoriali",
-        "Tutoriali 2"
-      ]
+      "radionice": ["Radionica Reacta/", "Radionica Expressa"]
     },
     {
       "id": "organizacija_2",
       "ime": "Organizacija 2",
-      "opis": "Opis organizacije 2",
-      "radionice": [
-        "radionica_2"
-      ]
-    },
-    {
-      "id": "organizacija_4",
-      "ime": "Organizacija 4",
-      "opis": "Lore ipsum 4",
-      "radionice": [
-        "Radionica 1",
-        "Radionica 3"
-      ]
+      "radionice": []
     }
   ],
   "tezine": [
@@ -135,50 +95,12 @@
   ],
   "prijave": [
     {
-      "ime": "mate",
-      "email": "mate@email.com",
-      "razlog_prijave": "lore ipsum",
-      "id": "bfd9"
-    },
-    {
-      "id": "f176",
-      "puno_ime": "sara",
-      "email": "sasv@sas.com",
-      "broj_mobitela": "04654",
-      "razlog_prijave": "dadassd",
-      "radionica": "Radionica 1"
-    },
-    {
-      "id": "2670",
-      "puno_ime": "aaa",
-      "email": "asaas@aassa.com",
-      "broj_mobitela": "qqq",
-      "razlog_prijave": "saad",
-      "radionica": "Radionica 3"
-    },
-    {
-      "id": "e630",
-      "puno_ime": "Mate",
-      "email": "mate@gmail.com",
-      "broj_mobitela": "04654",
-      "razlog_prijave": "Lore ipsum",
-      "radionica": "Radionica 1"
-    },
-    {
-      "id": "ada2",
-      "puno_ime": "Sara",
-      "email": "saraemial@gmail.com",
-      "broj_mobitela": "789456",
-      "razlog_prijave": "Lore ipsum",
-      "radionica": "Sarini tutoriali"
-    },
-    {
-      "id": "6a62",
+      "id": "8bd2",
       "puno_ime": "Ante Antic",
       "email": "anteantic@gmail.com",
-      "broj_mobitela": "0385999",
+      "broj_mobitela": "3859956123",
       "razlog_prijave": "Lore ipsum Ante",
-      "radionica": "Sarina Radionica Reacta"
+      "radionica": "Radionica Reacta"
     }
   ]
 }

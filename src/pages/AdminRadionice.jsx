@@ -18,8 +18,7 @@ export default function AdminRadionice() {
   }, []);
 
   return (
-    <div>
-      <button onClick={() => setModalDodajRadionicu(true)}>Dodaj</button>
+    <div className="admin-radionice-div">
       <Tablica
         ime={"radionice"}
         set={setRadionice}
@@ -30,6 +29,14 @@ export default function AdminRadionice() {
           { label: "Datum", variable: "datum" },
         ]}
       />
+      <div style={{ display: "flex", justifyContent: "end" }}>
+        <button
+          className="admin-add-btn"
+          onClick={() => setModalDodajRadionicu(true)}
+        >
+          +
+        </button>
+      </div>
       {modalDodajRadionicu && (
         <DodajNovuRadionicu
           setModalDodajRadionicu={setModalDodajRadionicu}

@@ -9,10 +9,16 @@
   padding: 20px;
   color: aliceblue;
   font-size: 25px;
+  text-decoration: none;
 }
 
-.link-div {
+.img-link-div {
   margin-left: 15px;
+  display: flex;
+}
+.link-div {
+  margin-left: 20px;
+  margin: auto;
 }
 
 img {
@@ -101,6 +107,17 @@ img {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.thank-msg {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 30px;
+}
 .modal-body form input {
   display: block;
   margin-bottom: 10px;
@@ -120,8 +137,20 @@ img {
   padding: 10px 20px;
   cursor: pointer;
 }
+.thank-msg button {
+  background-color: rgb(238, 150, 75);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
 .modal-body form input[type="submit"]:hover {
+  background-color: rgb(212, 105, 5);
+}
+.modal-body button:hover {
   background-color: rgb(212, 105, 5);
 }
 .modal-body form input[name="razlog_prijave"] {
@@ -185,6 +214,19 @@ select[name="organizacija"] option {
   color: white;
   border-radius: 99px;
   background-color: rgb(40, 175, 176);
+}
+.modal-body form select.modal-input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-body form select.modal-input:hover {
+  border-color: rgb(212, 105, 5);
 }
 
 /* --------------------------------------------------------------------- */

@@ -13,6 +13,10 @@ export default function Prijava({ setModal, currentRadionica }) {
   const [brojPrijava, setBrojPrijava] = useState(0);
   const [prijavaModal, setPrijavaModal] = useState(true);
   const [hvalaModal, setHvalaModal] = useState(false);
+  const [emailValid, setEmailValid] = useState(true);
+  const [emailError, setEmailError] = useState("");
+  const [phoneValid, setPhoneValid] = useState(true);
+  const [phoneError, setPhoneError] = useState("");
 
   const handlePovratak = () => {
     window.location.reload();
@@ -72,35 +76,57 @@ export default function Prijava({ setModal, currentRadionica }) {
                 type="text"
                 name="puno_ime"
                 placeholder="Puno ime polaznika..."
+                required
                 value={novaPrijava.puno_ime}
                 onChange={(e) =>
                   setNovaPrijava({ ...novaPrijava, puno_ime: e.target.value })
                 }
-                required
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Email polaznika..."
                 value={novaPrijava.email}
-                onChange={(e) =>
-                  setNovaPrijava({ ...novaPrijava, email: e.target.value })
-                }
                 required
+                onChange={(e) => {
+                  const email = e.target.value;
+                  setNovaPrijava({ ...novaPrijava, email });
+                  // Email validation
+                  const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                  setEmailValid(isValid);
+                  setEmailError(isValid ? "" : "Molimo unesite ispravan email");
+                }}
+                style={{
+                  border: emailValid ? "1px solid #ccc" : "1px solid red",
+                }}
               />
+              {!emailValid && <p style={{ color: "red" }}>{emailError}</p>}
               <input
                 type="tel"
                 name="broj_mobitela"
-                placeholder="Broj telefona..."
+                placeholder="+385..."
                 value={novaPrijava.broj_mobitela}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const phoneNumber = e.target.value;
                   setNovaPrijava({
                     ...novaPrijava,
-                    broj_mobitela: e.target.value,
-                  })
-                }
-                required
+                    broj_mobitela: phoneNumber,
+                  });
+                  // Croatian phone number validation
+                  const isValid =
+                    /^(?:\+?385)?(?:\(0\))?(\d{2,3})[\s\./-]?(\d{2,3})[\s\./-]?(\d{2,3})$/.test(
+                      phoneNumber
+                    );
+                  setPhoneValid(isValid);
+                  setPhoneError(
+                    isValid ? "" : "Molimo unesite ispravan broj telefona"
+                  );
+                }}
+                style={{
+                  border: phoneValid ? "1px solid #ccc" : "1px solid red",
+                }}
               />
+              {!phoneValid && <p style={{ color: "red" }}>{phoneError}</p>}
               <input
                 type="text"
                 name="razlog_prijave"
@@ -120,10 +146,19 @@ export default function Prijava({ setModal, currentRadionica }) {
         </div>
       )}
       {hvalaModal && (
-        <div className="modal-container">
-          <h2>Hvala na prijavi !</h2>
-          <p>Lore ipsum...</p>
-          <button onClick={handlePovratak}>Povratak na radionice</button>
+        <div className="modal-background">
+          <div className="modal-container">
+            <div className="thank-msg">
+              <h2>Hvala na prijavi !</h2>
+              <p>
+                Hvala vam što ste se prijavili za naš tečaj{" "}
+                {currentRadionica.ime}. Vaša prijava je zaprimljena i cijenimo
+                vaš interes za naše obrazovne programe.
+              </p>
+              <p>Ubrzo ćemo Vas konaktirati za daljnje informacije o tečaju.</p>
+              <button onClick={handlePovratak}>Povratak na radionice</button>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -2,13 +2,21 @@ import axios from "axios";
 
 export default function IzbrisiBtn({ item, ime, set }) {
   const izbrisiPodatak = () => {
-    axios
-      .delete(`http://localhost:3001/${ime}/${item.id}`)
-      .then((r) => {
-        axios.get(`http://localhost:3001/${ime}`).then((rez) => set(rez.data));
-      })
-      .catch((err) => alert(err));
+    if (window.confirm(`Jeste li sigurni da želite izbrisati ${item.ime} ?`)) {
+      axios
+        .delete(`http://localhost:3001/${ime}/${item.id}`)
+        .then((r) => {
+          axios
+            .get(`http://localhost:3001/${ime}`)
+            .then((rez) => set(rez.data));
+        })
+        .catch((err) => alert(err));
+    }
   };
 
-  return <button onClick={izbrisiPodatak}>Izbriši</button>;
+  return (
+    <button className="admin-delete-btn" onClick={izbrisiPodatak}>
+      Izbriši
+    </button>
+  );
 }

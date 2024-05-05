@@ -44,8 +44,22 @@ export default function Predavac({
       >
         {result.ime}
       </p>
-      <p>Biografija: {result.biografija}</p>
-      <p>Organizacija: {result.organizacija}</p>
+      <p style={{ color: "rgb(25, 100, 126)" }}>Biografija:</p>
+      <div
+        style={{
+          height: "130px",
+          fontSize: "14px",
+        }}
+      >
+        {" "}
+        {result.biografija}
+      </div>
+      <p style={{ display: "flex" }}>
+        <div style={{ color: "rgb(25, 100, 126)", marginRight: "5px" }}>
+          Organizacija:
+        </div>
+        {result.organizacija}
+      </p>
       <hr />
       <div style={{ textAlign: "center" }}>
         {result.teme.map((r, index) => (

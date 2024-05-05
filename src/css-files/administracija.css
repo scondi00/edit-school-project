@@ -1,0 +1,88 @@
+.admin-navbar {
+  background-color: rgb(238, 150, 75);
+  height: 60px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 20px;
+  padding-top: 30px;
+}
+
+.admin-radionice-div {
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 30px;
+}
+.admin-add-btn {
+  margin-top: 50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 99px;
+  font-size: 35px;
+  background-color: rgb(238, 150, 75);
+  border: none;
+  color: white;
+}
+
+.admin-edit-btn {
+  background-color: rgb(77, 164, 193);
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+}
+.admin-delete-btn {
+  background-color: rgb(239, 64, 37);
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 15px;
+}
+
+.not-admin-div {
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+}
+.not-admin-box {
+  box-shadow: 1px 1px 10px rgba(64, 64, 64, 0.652);
+  border-radius: 20px;
+  text-align: center;
+  background-color: rgb(238, 150, 75);
+  padding: 70px;
+}
+.not-admin-box p {
+  font-size: 70px;
+  color: white;
+}
+
+/* TABLE */
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th {
+  font-size: 30px;
+  padding: 10px;
+  text-align: left;
+}
+
+.custom-table td {
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-table tbody tr:last-child {
+  border-bottom: 1px solid #ddd; /* Remove bottom border from the last row */
+}

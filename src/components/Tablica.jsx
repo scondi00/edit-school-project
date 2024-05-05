@@ -3,7 +3,7 @@ import RedakTablice from "./RedakTablice";
 export default function Tablica({ result, stupci, ime, set }) {
   return (
     <div>
-      <table>
+      <table className="custom-table">
         <thead>
           <tr>
             {stupci.map((stupac, index) => (

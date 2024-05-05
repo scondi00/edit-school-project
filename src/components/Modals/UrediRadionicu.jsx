@@ -4,8 +4,6 @@ export default function UrediRadionicu({
   currentRadionica,
   setModalUrediRadionicu,
   setRadionice,
-  setFilterTeme,
-  setFilterTezina,
 }) {
   const [teme, setTeme] = useState([]);
   const [tezine, setTezine] = useState([]);
@@ -14,6 +12,7 @@ export default function UrediRadionicu({
     predavac: "",
     opis: "",
     datum: "",
+    broj_prijava: "",
     img: "",
     teme: [],
     tezina: "",
@@ -52,6 +51,9 @@ export default function UrediRadionicu({
     if (editRadionica.tezina !== "") {
       data.tezina = editRadionica.tezina;
     }
+    if (editRadionica.broj_prijava !== "") {
+      data.broj_prijava = editRadionica.broj_prijava;
+    }
 
     return data;
   }
@@ -88,18 +90,17 @@ export default function UrediRadionicu({
         )
         .then((r) => {
           //možemo reload-at sve na ovaj naćin
-          window.location.reload();
+          // window.location.reload();
 
           //ili ponovo pomoću axiosa:
-          // setModalUrediRadionicu(false);
-          // axios
-          //   .get("http://localhost:3001/radionice")
-          //   .then((r) => {
-          //     setFilterTeme([]);
-          //     setFilterTezina([]);
-          //     setRadionice(r.data);
-          //   })
-          //   .catch((err) => alert(err));
+
+          axios
+            .get("http://localhost:3001/radionice")
+            .then((r) => {
+              setModalUrediRadionicu(false);
+              setRadionice(r.data);
+            })
+            .catch((err) => alert(err));
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -117,6 +118,12 @@ export default function UrediRadionicu({
           X
         </button>
         <h2>Uredi radionicu: {currentRadionica.ime}</h2>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Nije nužuno mijenjati sve podatke.
+        </p>
+        <p style={{ color: "rgba(108, 108, 108)" }}>
+          Ukoliko se podatak ne promijeni, ostat će stara vrijednost.
+        </p>
         <div className="modal-body">
           <form onSubmit={postIzmjenu}>
             <div>
@@ -128,6 +135,23 @@ export default function UrediRadionicu({
                 onChange={handleChange}
               />
             </div>
+            <label>
+              Uredi broj prijava:
+              <select
+                className="modal-input"
+                value={editRadionica.broj_prijava}
+                onChange={handleChange}
+                name="broj_prijava" // Name set to identify which state is being updated
+              >
+                <option value="">Choose...</option>
+                {[...Array(21).keys()].map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
+                <option value="">Ne želim promjeniti broj prijava</option>
+              </select>
+            </label>
             <div>
               Promjeni sliku:{" "}
               <input
